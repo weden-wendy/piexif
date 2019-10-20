@@ -1,30 +1,23 @@
 import typescript from 'rollup-plugin-typescript2';
-import pkg from './package.json';
-import {terser} from "rollup-plugin-terser";
+import { eslint } from 'rollup-plugin-eslint';
+import { prettier } from 'rollup-plugin-prettier';
+
 export default {
-  input: 'src/index.ts', // our source file
-  output: [
-    {
-      file: pkg.main,
-      format: 'cjs'
-    },
-    {
-      file: pkg.module,
-      format: 'es' // the preferred format
-    },
-    {
-      file: pkg.browser,
-      format: 'iife',
-      name: 'piexif' // the global which can be used in a browser
-    }
-  ],
-  external: [
-      ...Object.keys(pkg.dependencies || {})
-  ],
+  input: './src/index.ts',
+  output: {
+    file: './dist/piexif.js',
+    name: 'piexif',
+    format: 'umd',
+    sourcemap: true,
+  },
   plugins: [
-    typescript({
-      typescript: require('typescript'),
+    typescript(),
+    eslint(),
+    prettier({
+      semi: true,
+      trailingComma: 'all',
+      singleQuote: true,
+      printWidth: 70,
     }),
-    terser() // minifies generated bundles
-  ]
+  ],
 };

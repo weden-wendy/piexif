@@ -1,15 +1,9 @@
-Piexifjs
+Piexif-ts
 ========
 
-**Node.js**                                                                                                        |**browser**
--------------------------------------------------------------------------------------------------------------------|-----------
-[![Build Status](https://travis-ci.org/hMatoba/piexifjs.svg?branch=2.0)](https://travis-ci.org/hMatoba/piexifjs)|[![CircleCI](https://circleci.com/gh/hMatoba/piexifjs/tree/2.0.svg?style=svg)](https://circleci.com/gh/hMatoba/piexifjs/tree/2.0)
-
 This repository is forked from [piexifjs](https://github.com/hMatoba/piexifjs) and all praise should go to the creator of this great library.
- 
-```
-npm install piexif-ts
-```
+
+Fix of the Typescript version of the original [piexifjs](https://github.com/hMatoba/piexifjs) as I was having trouble using it. See original documentation for how to use it.
 
 How to Use
 ----------
