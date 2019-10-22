@@ -11,7 +11,7 @@ export const TypeNums: { [key: number]: string } = {
   10: 'SRational',
 };
 
-export const ImageTagElement = {
+const ImageTagElement = {
   11: {
     name: 'ProcessingSoftware',
     type: Types.Ascii,
