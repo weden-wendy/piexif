@@ -17,10 +17,7 @@
     ],
     "@typescript-eslint/interface-name-prefix": 0,
     "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      }
+      "error"
     ]
   },
   "parserOptions": {

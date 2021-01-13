@@ -1,5 +1,5 @@
 {
-  "name": "piexifts",
+  "name": "piexif-ts",
   "version": "2.0.16",
   "description": "Read and write exif with typescript!",
   "main": "dist/piexif.js",

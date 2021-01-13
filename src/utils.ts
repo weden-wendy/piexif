@@ -1,19 +1,11 @@
-import {
-  Types,
-  TagsFieldNames,
-  IExifElement,
-  ErrorCallback,
-} from './interfaces';
+import { Types, TagsFieldNames, IExifElement, ErrorCallback } from './interfaces';
 import * as exceptions from './exceptions';
 import { Tags } from './constants';
 
 let errorBypass = false;
-let errorCallback: ErrorCallback = undefined;
+let errorCallback: ErrorCallback = undefined; 
 
-export function setErrorByPass(
-  bypass: boolean,
-  errorcallback?: ErrorCallback,
-): void {
+export function setErrorByPass(bypass: boolean, errorcallback?: ErrorCallback) {
   errorBypass = bypass;
   errorCallback = errorcallback;
 }
@@ -632,7 +624,7 @@ export class ExifReader {
       const value = this.tiftag.slice(pointer + 8, pointer + 12);
 
       const valueSet = [valueType, valueNum, value];
-      if (tag !== null && tag in Tags[t]) {
+      if ( tag !== null && tag in Tags[t]) {
         ifdObj[tag] = this.convertValue(valueSet);
       }
     }
@@ -640,10 +632,7 @@ export class ExifReader {
     return ifdObj;
   };
 
-  getFirstIfdPointer = (
-    pointer: number,
-    ifdName: TagsFieldNames,
-  ): string | null => {
+  getFirstIfdPointer = (pointer: number, ifdName: TagsFieldNames): string | null => {
     const tagCount = unpack(
       this.endianMark + 'H',
       this.tiftag.slice(pointer, pointer + 2),

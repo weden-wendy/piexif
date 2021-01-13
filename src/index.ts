@@ -358,15 +358,12 @@ export const dump = (originalExifObj: IExif): string => {
   );
 };
 
-export const setErrorByPass = (
-  bypass: boolean,
-  errorCallback?: ErrorCallback,
-): void => {
+export const setErrorByPass = (bypass: boolean, errorCallback: ErrorCallback | null ): void => {
   _utils.setErrorByPass(bypass, errorCallback);
-};
+}
 
 export const resetOrientation = (exifObject: IExif): IExif => {
-  const orientationKey = TagValues.ImageIFD.Orientation;
+  let orientationKey = TagValues.ImageIFD.Orientation;
 
   if (exifObject['0th']) {
     if (exifObject['0th'][orientationKey]) {
