@@ -1,8 +1,7 @@
 import * as _utils from './utils';
 
-// Hacky? Yep, but sometimes you gotta do what you gotta do
 export { Types, IExif, IExifElement, ErrorCallback } from './interfaces';
-export { TagValues } from './constants';
+export { Tags, TagValues } from './constants';
 export { GPSHelper } from './helper';
 export { ValueConvertError } from './exceptions';
 
